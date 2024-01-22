@@ -16,11 +16,11 @@ const lazyLoadPage = (path: string) => async () => {
 
 const router = createBrowserRouter([
 	{
-		path: `/${PROJECT_NAME}`,
+		path: `${PROJECT_NAME}/`,
 		loader: () => redirect('personal-area'),
 	},
 	{
-		path: `/${PROJECT_NAME}`,
+		path: `${PROJECT_NAME}/`,
 		element: <App />,
 		children: [
 			{

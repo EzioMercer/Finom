@@ -4,6 +4,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (env, argv) => {
 	const mode = argv.mode ?? 'development';
+	const projectName = mode === 'production' ? '"/Finom"' : '""';
 	
 	return {
 		devtool: 'source-map',
@@ -55,7 +56,7 @@ module.exports = (env, argv) => {
 							},
 						},
 						'postcss-loader',
-						'sass-loader',
+						'sass-loader'
 					],
 				},
 			],
@@ -73,7 +74,7 @@ module.exports = (env, argv) => {
 				React: 'react',
 			}),
 			new DefinePlugin({
-				PROJECT_NAME: mode === 'production' ? '"Finom"' : '""',
+				PROJECT_NAME: projectName,
 			}),
 		],
 	}
