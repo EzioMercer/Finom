@@ -6,7 +6,17 @@ import router from './router';
 import isUndefined from './utils/functions/checks/isUndefined';
 
 (() => {
-	const link = ({ rel, type, sizes, href }) => {
+	const link = ({
+		rel,
+		type,
+		sizes,
+		href
+	}: {
+		rel: string,
+		type?: string,
+		sizes: string,
+		href: string
+	}) => {
 		const link = document.createElement('link');
 
 		link.setAttribute('rel', rel);
@@ -18,20 +28,20 @@ import isUndefined from './utils/functions/checks/isUndefined';
 		return link;
 	}
 
-	const appleFavicon = size => link({
+	const appleFavicon = (size: number) => link({
 		rel: 'apple-touch-icon',
 		sizes: `${ size }x${ size }`,
 		href: `${ PROJECT_NAME }/assets/images/icons/favicon/apple-icon-${ size }x${ size }.png`
 	})
 
-	const androidFavicon = size => link({
+	const androidFavicon = (size: number) => link({
 		rel: 'icon',
 		sizes: `${ size }x${ size }`,
 		type: 'image/png',
 		href: `${ PROJECT_NAME }/assets/images/icons/favicon/android-icon-${ size }x${ size }.png`
 	})
 
-	const favicon = size => link({
+	const favicon = (size: number) => link({
 		rel: 'icon',
 		sizes: `${ size }x${ size }`,
 		type: 'image/png',
