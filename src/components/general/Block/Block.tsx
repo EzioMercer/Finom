@@ -5,7 +5,7 @@ const Block = ({
 	children,
 	className
 }: {
-	children: JSXElement,
+	children: JSXElement | JSXElement[],
 	className?: string
 }) => {
 	return (

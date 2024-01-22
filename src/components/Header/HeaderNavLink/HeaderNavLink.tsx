@@ -3,10 +3,9 @@ import { NavLink } from 'react-router-dom';
 import isUndefined from '../../../utils/functions/checks/isUndefined';
 import { IconProps } from '../../general/Icon/Icon';
 import JSXElement from '../../../utils/types/JSXElement';
+import { NavigationLinkProps } from '../../general/NavigationLink/NavigationLink';
 
-type HeaderNavLinkProps = {
-	to: string;
-	text: string;
+type HeaderNavLinkProps = NavigationLinkProps & {
 	icon?: IconProps;
 }
 

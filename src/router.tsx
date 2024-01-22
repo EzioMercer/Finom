@@ -1,11 +1,5 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, redirect } from 'react-router-dom';
 import App from './app/App';
-// import Cards from './app/cards/Cards';
-// import HelpCenter from './app/help-center/HelpCenter';
-// import InviteYourPartners from './app/invite-your-partners/InviteYourPartners';
-// import Money from './app/money/Money';
-// import Team from './app/team/Team';
-// import UpgradePlan from './app/upgrade-plan/UpgradePlan';
 
 const lazyLoadPage = (path: string) => async () => {
 	const pathFolders = path.split('/');
@@ -23,42 +17,73 @@ const lazyLoadPage = (path: string) => async () => {
 const router = createBrowserRouter([
 	{
 		path: '/',
+		loader: () => redirect('personal-area'),
+	},
+	{
+		path: '/',
 		element: <App />,
 		children: [
 			{
-				index: true,
-				// element: <PersonalArea />
-				lazy: lazyLoadPage('personal-area')
+				path: 'personal-area',
+				loader: () => redirect('plan-and-limits')
+			},
+			{
+				path: 'personal-area',
+				lazy: lazyLoadPage('personal-area'),
+				children: [
+					{
+						path: 'business-profile',
+						lazy: lazyLoadPage('personal-area/business-profile')
+					},
+					{
+						path: 'e-invoicing',
+						lazy: lazyLoadPage('personal-area/e-invoicing')
+					},
+					{
+						path: 'notifications',
+						lazy: lazyLoadPage('personal-area/notifications')
+					},
+					{
+						path: 'plan-and-limits',
+						lazy: lazyLoadPage('personal-area/plan-and-limits')
+					},
+					{
+						path: 'profile',
+						lazy: lazyLoadPage('personal-area/profile')
+					},
+					{
+						path: 'security',
+						lazy: lazyLoadPage('personal-area/security')
+					},
+					{
+						path: 'team',
+						lazy: lazyLoadPage('personal-area/team')
+					}
+				]
 			},
 			{
 				path: 'cards',
-				lazy: lazyLoadPage('cards'),
-				// element: <Cards />
+				lazy: lazyLoadPage('cards')
 			},
 			{
 				path: 'help-center',
-				lazy: lazyLoadPage('help-center'),
-				// element: <HelpCenter />
+				lazy: lazyLoadPage('help-center')
 			},
 			{
 				path: 'invite-your-partners',
-				lazy: lazyLoadPage('invite-your-partners'),
-				// element: <InviteYourPartners />
+				lazy: lazyLoadPage('invite-your-partners')
 			},
 			{
 				path: 'money',
-				lazy: lazyLoadPage('money'),
-				// element: <Money />
+				lazy: lazyLoadPage('money')
 			},
 			{
 				path: 'team',
-				lazy: lazyLoadPage('team'),
-				// element: <Team />
+				lazy: lazyLoadPage('team')
 			},
 			{
 				path: 'upgrade-plan',
-				lazy: lazyLoadPage('upgrade-plan'),
-				// element: <UpgradePlan />
+				lazy: lazyLoadPage('upgrade-plan')
 			}
 		]
 	}
