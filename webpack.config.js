@@ -5,12 +5,14 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 module.exports = (env, argv) => {
 	const mode = argv.mode ?? 'development';
 	const projectName = mode === 'production' ? '"/Finom"' : '""';
+	// const projectName = '""';
 	
 	return {
 		devtool: 'source-map',
 		mode: mode,
 		output: {
 			path: path.resolve(__dirname, 'docs'),
+			publicPath: '',
 			clean: true,
 		},
 		performance: {
@@ -27,6 +29,10 @@ module.exports = (env, argv) => {
 		},
 		module: {
 			rules: [
+				{
+					test: /\.(png|svg)/,
+					type: "asset/resource",
+				},
 				{
 					test: /\.(js|ts)x?$/,
 					exclude: /node_modules/,
