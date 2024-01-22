@@ -1,5 +1,5 @@
 const path = require('path');
-const {ProvidePlugin} = require('webpack');
+const { ProvidePlugin, DefinePlugin } = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (env, argv) => {
@@ -70,8 +70,11 @@ module.exports = (env, argv) => {
 				inject: false,
 			}),
 			new ProvidePlugin({
-				React: 'react'
-			})
+				React: 'react',
+			}),
+			new DefinePlugin({
+				PROJECT_NAME: mode === 'production' ? '"Finom"' : '""',
+			}),
 		],
 	}
 }

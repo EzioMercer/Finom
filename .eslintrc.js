@@ -1,4 +1,7 @@
 module.exports = {
+    globals: {
+        'PROJECT_NAME': true
+    },
     'extends': 'react-app',
     'plugins': [
         'react-hooks'
