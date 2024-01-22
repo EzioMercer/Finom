@@ -64,6 +64,11 @@ module.exports = (env, argv) => {
 			new HTMLWebpackPlugin({
 				template: './public/index.html',
 			}),
+			new HTMLWebpackPlugin({
+				template: './public/404.html',
+				filename: '404.html',
+				inject: false,
+			}),
 			new ProvidePlugin({
 				React: 'react'
 			})
