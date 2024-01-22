@@ -1,3 +1,20 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Finom</title><link rel="apple-touch-icon" sizes="57x57" href="/assets/images/icons/favicon/apple-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="/assets/images/icons/favicon/apple-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="/assets/images/icons/favicon/apple-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/assets/images/icons/favicon/apple-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="/assets/images/icons/favicon/apple-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/assets/images/icons/favicon/apple-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/assets/images/icons/favicon/apple-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/assets/images/icons/favicon/apple-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/favicon/apple-icon-180x180.png"><link rel="icon" type="image/png" sizes="192x192" href="/assets/images/icons/favicon/android-icon-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="96x96" href="/assets/images/icons/favicon/favicon-96x96.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon/favicon-16x16.png"><script>const { origin, pathname } = new URL(document.location.href);
-
-			window.location.replace(origin + '/#' + pathname);</script><script defer="defer" src="main.js"></script></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root" style="height: 100%"></div></body></html>
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Finom</title><link rel="apple-touch-icon" sizes="57x57" href="/assets/images/icons/favicon/apple-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="/assets/images/icons/favicon/apple-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="/assets/images/icons/favicon/apple-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/assets/images/icons/favicon/apple-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="/assets/images/icons/favicon/apple-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/assets/images/icons/favicon/apple-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/assets/images/icons/favicon/apple-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/assets/images/icons/favicon/apple-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/favicon/apple-icon-180x180.png"><link rel="icon" type="image/png" sizes="192x192" href="/assets/images/icons/favicon/android-icon-192x192.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon/favicon-32x32.png"><link rel="icon" type="image/png" sizes="96x96" href="/assets/images/icons/favicon/favicon-96x96.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon/favicon-16x16.png"><script>// Single Page Apps for GitHub Pages
+			// MIT License
+			// https://github.com/rafgraph/spa-github-pages
+			// This script checks to see if a redirect is present in the query string,
+			// converts it back into the correct url and adds it to the
+			// browser's history using window.history.replaceState(...),
+			// which won't cause the browser to attempt to load the new url.
+			// When the single page app is loaded further down in this file,
+			// the correct url will be waiting in the browser's history for
+			// the single page app to route accordingly.
+			(function(l) {
+				if (l.search[1] === '/' ) {
+					var decoded = l.search.slice(1).split('&').map(function(s) {
+						return s.replace(/~and~/g, '&')
+					}).join('?');
+					window.history.replaceState(null, null,
+						l.pathname.slice(0, -1) + decoded + l.hash
+					);
+				}
+			}(window.location))</script><script defer="defer" src="main.js"></script></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
