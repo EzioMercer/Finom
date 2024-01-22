@@ -9,6 +9,7 @@ module.exports = (env, argv) => {
 		devtool: 'source-map',
 		mode: mode,
 		output: {
+			path: path.resolve(__dirname, 'docs'),
 			clean: true,
 		},
 		performance: {
