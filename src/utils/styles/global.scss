@@ -1,0 +1,10 @@
+@import '/src/utils/styles/variables/variables';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: $back-colorBg;
+}

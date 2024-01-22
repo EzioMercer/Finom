@@ -1,0 +1,116 @@
+@import '/src/utils/styles/variables/variables';
+
+.choose-company {
+	display:     flex;
+	align-items: center;
+	gap:         8px;
+
+	position:    relative;
+
+	cursor:      pointer;
+
+	&::after {
+		content:         url('/public/assets/images/icons/general/chevron.svg');
+
+		display:         flex;
+		align-items:     center;
+		justify-content: center;
+
+		transition: transform $animation-duration-fast;
+	}
+
+	&.open {
+		&::after {
+			transform: rotate(180deg);
+		}
+	}
+
+	.selected {
+		&-logo {
+			display:          flex;
+			align-items:      center;
+			justify-content:  center;
+
+			width:            32px;
+			height:           32px;
+
+			border-radius:    12px;
+			background-color: $palette-red-4;
+
+			font-family:      Lato-Bold, sans-serif;
+			font-size:        16px;
+			color:            $font-colorTextAccent;
+		}
+
+		&-name {
+			display:         flex;
+			align-items:     center;
+			justify-content: center;
+
+			font-family:     Lato-Regular, sans-serif;
+			font-size:       18px;
+		}
+	}
+
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+
+		li {
+			display: flex;
+			gap: 16px;
+			align-items: center;
+
+			padding: 8px 20px;
+
+			background-color: white;
+			transition: background-color $animation-duration-slow;
+
+			&:hover {
+				background-color: #f2f2f4;
+			}
+
+			.company {
+				&-logo {
+					display:          flex;
+					align-items:      center;
+					justify-content:  center;
+
+					width:            24px;
+					height:           24px;
+
+					border-radius:    8px;
+					background-color: $palette-red-4;
+
+					font-family:      Lato-Bold, sans-serif;
+					font-size:        11px;
+					color:            $font-colorTextAccent;
+				}
+
+				&-name {
+					display:         flex;
+					align-items:     center;
+					justify-content: center;
+
+					font-family:     Lato-Regular, sans-serif;
+					font-size:       16px;
+				}
+			}
+		}
+	}
+
+	.block {
+		position:      absolute;
+		top:           calc(100% + 4px);
+		right:         0;
+		width:         150%;
+
+		border-radius: 8px;
+		padding:       8px 0;
+
+		@include media {
+			width: 100%;
+		}
+	}
+}

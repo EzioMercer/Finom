@@ -1,0 +1,60 @@
+@import '/src/utils/styles/variables/variables';
+
+.header-nav-link {
+	display: inline-block;
+	min-width: max-content;
+	position: relative;
+
+	&::after {
+		position: absolute;
+		left: 0;
+		content: attr(data-text);
+		width: max-content;
+	}
+
+	&:hover {
+		&::after {
+			font-weight: 600;
+		}
+	}
+
+	&:any-link {
+		color: inherit;
+	}
+
+	span {
+		visibility: hidden;
+	}
+
+	&.active {
+		&::after {
+			font-weight: 600;
+		}
+	}
+}
+
+.with-icon {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	width: 100%;
+
+	&:hover {
+		cursor: pointer;
+
+		img {
+			transform: scale(1.5);
+		}
+
+		.header-nav-link {
+			&::after {
+				font-weight: 600;
+			}
+		}
+	}
+
+	img {
+		transform: scale(1);
+		transition: transform $animation-duration-normal;
+	}
+}
