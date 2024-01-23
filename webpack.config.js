@@ -1,6 +1,7 @@
 const path = require('path');
 const { ProvidePlugin, DefinePlugin } = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (env, argv) => {
 	const mode = argv.mode ?? 'development';
@@ -15,7 +16,7 @@ module.exports = (env, argv) => {
 			publicPath: '',
 			assetModuleFilename: (pathData) => {
 				console.log(pathData.filename);
-				
+
 				const filepath = path
 					.dirname(pathData.filename)
 					.split("/")
@@ -39,10 +40,6 @@ module.exports = (env, argv) => {
 		},
 		module: {
 			rules: [
-				{
-					test: /\.png$/,
-					type: 'url-loader'
-				},
 				{
 					test: /\.(js|ts)x?$/,
 					exclude: /node_modules/,
@@ -93,6 +90,14 @@ module.exports = (env, argv) => {
 				PROJECT_NAME: `"${projectName}"`,
 				ASSETS_PATH: `"${projectName}/assets"`
 			}),
+			new CopyWebpackPlugin({
+				patterns: [
+					{
+						from: './public/assets/images',
+						to: 'assets/images'
+					}
+				]
+			})
 		],
 	}
 }
