@@ -9,7 +9,7 @@ const lazyLoadPage = (path: string) => async () => {
 		.map(x => (x[0] as string).toUpperCase() + x.slice(1))
 		.join('');
 
-	const Page = await import(`./app/${ path }/${ targetFileName }.tsx`);
+	const Page = await import(`/src/app/${ path }/${ targetFileName }.tsx`);
 
 	return { Component: Page.default }
 }

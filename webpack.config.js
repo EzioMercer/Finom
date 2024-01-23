@@ -13,7 +13,6 @@ module.exports = (env, argv) => {
 		mode: mode,
 		output: {
 			path: path.resolve(__dirname, 'docs'),
-			publicPath: '',
 			assetModuleFilename: (pathData) => {
 				console.log(pathData.filename);
 
