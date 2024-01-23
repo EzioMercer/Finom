@@ -57,11 +57,13 @@ const Header = () => {
 							</ul>
 						</nav>
 
-						<Button className={ styles['upgrade-plan'] } text={ 'Upgrade plan' } icon={ {
+						<Button className={ styles['upgrade-plan'] } icon={ {
 							src: `${ ASSETS_PATH }/images/icons/general/rocket.png`,
 							alt: 'rocket',
 							size: 16
-						} } />
+						} } >
+							Upgrade plan
+						</Button>
 
 						<ChooseCompany />
 					</div>

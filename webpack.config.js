@@ -6,16 +6,13 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = (env, argv) => {
 	const mode = argv.mode ?? 'development';
 	const projectName = mode === 'production' ? '/Finom' : '';
-	// const projectName = '""';
 	
 	return {
 		devtool: 'source-map',
 		mode: mode,
 		output: {
 			path: path.resolve(__dirname, 'docs'),
-			assetModuleFilename: (pathData) => {
-				console.log(pathData.filename);
-
+			assetModuleFilename: pathData => {
 				const filepath = path
 					.dirname(pathData.filename)
 					.split("/")
