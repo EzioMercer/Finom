@@ -1,13 +1,14 @@
 import styles from './Button.module.scss';
 import isUndefined from '../../../utils/functions/checks/isUndefined';
 import Icon, { IconProps } from '../Icon/Icon';
+import Children from '../../../utils/types/Children';
 
 const Button = ({
-	text,
+	children,
 	className,
 	icon
 }: {
-	text: string,
+	children: Children,
 	className?: string,
 	icon?: IconProps
 }) => {
@@ -17,7 +18,7 @@ const Button = ({
 	return (
 		<button className={ (className ?? '') + ' ' + styles.button }>
 			{ iconEl }
-			{ text }
+			{ children }
 		</button>
 	)
 }
