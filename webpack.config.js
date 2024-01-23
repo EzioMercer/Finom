@@ -4,7 +4,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (env, argv) => {
 	const mode = argv.mode ?? 'development';
-	const projectName = mode === 'production' ? '"/Finom"' : '""';
+	const projectName = mode === 'production' ? '/Finom' : '';
 	// const projectName = '""';
 	
 	return {
@@ -12,7 +12,17 @@ module.exports = (env, argv) => {
 		mode: mode,
 		output: {
 			path: path.resolve(__dirname, 'docs'),
-			publicPath: '',
+			publicPath: '/lox',
+			assetModuleFilename: (pathData) => {
+				console.log(pathData.filename);
+				
+				const filepath = path
+					.dirname(pathData.filename)
+					.split("/")
+					.slice(1)
+					.join("/");
+				return `${filepath}/[name].[hash][ext][query]`;
+			},
 			clean: true,
 		},
 		performance: {
@@ -30,8 +40,8 @@ module.exports = (env, argv) => {
 		module: {
 			rules: [
 				{
-					test: /\.(png|svg)/,
-					type: "asset/resource",
+					test: /\.png$/,
+					type: 'url-loader'
 				},
 				{
 					test: /\.(js|ts)x?$/,
@@ -80,7 +90,8 @@ module.exports = (env, argv) => {
 				React: 'react',
 			}),
 			new DefinePlugin({
-				PROJECT_NAME: projectName,
+				PROJECT_NAME: `"${projectName}"`,
+				ASSETS_PATH: `"${projectName}/assets"`
 			}),
 		],
 	}

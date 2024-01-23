@@ -1,6 +1,7 @@
 module.exports = {
     globals: {
-        'PROJECT_NAME': true
+        'PROJECT_NAME': true,
+        "ASSETS_PATH": true
     },
     'extends': 'react-app',
     'plugins': [

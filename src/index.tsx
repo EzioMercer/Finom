@@ -31,21 +31,21 @@ import isUndefined from './utils/functions/checks/isUndefined';
 	const appleFavicon = (size: number) => link({
 		rel: 'apple-touch-icon',
 		sizes: `${ size }x${ size }`,
-		href: `${ PROJECT_NAME }/assets/images/icons/favicon/apple-icon-${ size }x${ size }.png`
+		href: `${ ASSETS_PATH }/images/icons/favicon/apple-icon-${ size }x${ size }.png`
 	})
 
 	const androidFavicon = (size: number) => link({
 		rel: 'icon',
 		sizes: `${ size }x${ size }`,
 		type: 'image/png',
-		href: `${ PROJECT_NAME }/assets/images/icons/favicon/android-icon-${ size }x${ size }.png`
+		href: `${ ASSETS_PATH }/images/icons/favicon/android-icon-${ size }x${ size }.png`
 	})
 
 	const favicon = (size: number) => link({
 		rel: 'icon',
 		sizes: `${ size }x${ size }`,
 		type: 'image/png',
-		href: `${ PROJECT_NAME }/assets/images/icons/favicon/favicon-${ size }x${ size }.png`
+		href: `${ ASSETS_PATH }/images/icons/favicon/favicon-${ size }x${ size }.png`
 	})
 
 

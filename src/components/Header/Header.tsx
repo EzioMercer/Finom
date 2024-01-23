@@ -13,7 +13,7 @@ const Header = () => {
 
 			<div className={ styles.logo }>
 				<Link to={ '/' }>
-					<img src="/assets/images/icons/logo.png" alt="logo" />
+					<img src={`${ ASSETS_PATH }/images/icons/logo.png`} alt="logo" />
 				</Link>
 			</div>
 
@@ -48,7 +48,7 @@ const Header = () => {
 										to={ 'invite-your-partners' }
 										text={ 'Invite your partners' }
 										icon={ {
-											src: '/assets/images/icons/general/gift.png',
+											src: `${ ASSETS_PATH }/images/icons/general/gift.png`,
 											alt: 'gift',
 											size: 24
 										} }
@@ -58,7 +58,7 @@ const Header = () => {
 						</nav>
 
 						<Button className={ styles['upgrade-plan'] } text={ 'Upgrade plan' } icon={ {
-							src: '/assets/images/icons/general/rocket.png',
+							src: `${ ASSETS_PATH }/images/icons/general/rocket.png`,
 							alt: 'rocket',
 							size: 16
 						} } />
