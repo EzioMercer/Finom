@@ -1,7 +1,7 @@
 import styles from './Button.module.scss';
-import isUndefined from '../../../utils/functions/checks/isUndefined';
+import isUndefined from '../../utils/functions/checks/isUndefined';
 import Icon, { IconProps } from '../Icon/Icon';
-import Children from '../../../utils/types/Children';
+import Children from '../../utils/types/Children';
 
 const Button = ({
 	children,
@@ -16,7 +16,7 @@ const Button = ({
 	const iconEl = isUndefined(icon) ? null : <Icon icon={ icon } />
 
 	return (
-		<button className={ (className ?? '') + ' ' + styles.button }>
+		<button className={ (className ?? '') + ' ' + styles['button'] }>
 			{ iconEl }
 			{ children }
 		</button>

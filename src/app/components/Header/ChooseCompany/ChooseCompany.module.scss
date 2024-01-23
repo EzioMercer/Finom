@@ -16,7 +16,7 @@
 		align-items:     center;
 		justify-content: center;
 
-		transition: transform $animation-duration-fast;
+		transition:      transform $animation-duration-fast;
 	}
 
 	&.open {
@@ -49,24 +49,24 @@
 
 			font-family:     Lato-Regular, sans-serif;
 			font-size:       18px;
-			text-transform: uppercase;
+			text-transform:  uppercase;
 		}
 	}
 
 	ul {
-		display: flex;
+		display:        flex;
 		flex-direction: column;
-		gap: 8px;
+		gap:            8px;
 
 		li {
-			display: flex;
-			gap: 16px;
-			align-items: center;
+			display:          flex;
+			gap:              16px;
+			align-items:      center;
 
-			padding: 8px 20px;
+			padding:          8px 20px;
 
 			background-color: $font-colorTextContrast;
-			transition: background-color $animation-duration-slow;
+			transition:       background-color $animation-duration-slow;
 
 			&:hover {
 				background-color: #f2f2f4;
@@ -96,7 +96,7 @@
 
 					font-family:     Lato-Regular, sans-serif;
 					font-size:       16px;
-					text-transform: uppercase;
+					text-transform:  uppercase;
 				}
 			}
 		}

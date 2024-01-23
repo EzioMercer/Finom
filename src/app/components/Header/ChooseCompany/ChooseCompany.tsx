@@ -1,5 +1,5 @@
 import styles from './ChooseCompany.module.scss';
-import Block from '../../general/Block/Block';
+import Block from '../../../../components/Block/Block';
 import { useRef, useState } from 'react';
 
 const ChooseCompany = () => {
@@ -15,7 +15,7 @@ const ChooseCompany = () => {
 			tabIndex={ 0 }
 			onClick={ toggle }
 			onBlur={ close }
-			ref={ref}
+			ref={ ref }
 		>
 			<div className={ styles['selected-logo'] }>T</div>
 			<div className={ styles['selected-name'] }>Tesla S.R.L.</div>
@@ -25,7 +25,7 @@ const ChooseCompany = () => {
 					<ul>
 						{
 							new Array(4).fill(0)
-								.map((_x, i) => <li onClick={ close } key={i}>
+								.map((_x, i) => <li onClick={ close } key={ i }>
 									<div className={ styles['company-logo'] }>T</div>
 									<div className={ styles['company-name'] }>Tesla S.R.L.</div>
 								</li>)

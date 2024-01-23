@@ -1,0 +1,22 @@
+@import '/src/utils/styles/variables/variables';
+
+.button {
+	display:       flex;
+	align-items:   center;
+	gap:           8px;
+
+	width:         fit-content;
+
+	padding:       8px 12px;
+	border-radius: 8px;
+
+	font-family:   Lato-Bold, sans-serif;
+	font-size:     14px;
+
+	transform:     scale(1);
+	transition:    transform $animation-duration-normal;
+
+	&:hover {
+		transform: scale(1.1);
+	}
+}

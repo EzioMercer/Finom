@@ -1,6 +1,6 @@
 import styles from './PersonalArea.module.scss';
 import { NavLink, Outlet } from 'react-router-dom';
-import Block from '../../components/general/Block/Block';
+import Block from '../../components/Block/Block';
 
 const PersonalArea = () => {
 	return (

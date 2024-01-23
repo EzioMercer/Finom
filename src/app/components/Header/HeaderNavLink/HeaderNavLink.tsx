@@ -1,9 +1,9 @@
 import styles from './HeaderNavLink.module.scss';
 import { NavLink } from 'react-router-dom';
-import isUndefined from '../../../utils/functions/checks/isUndefined';
-import { IconProps } from '../../general/Icon/Icon';
-import JSXElement from '../../../utils/types/JSXElement';
-import { NavigationLinkProps } from '../../general/NavigationLink/NavigationLink';
+import isUndefined from '../../../../utils/functions/checks/isUndefined';
+import { IconProps } from '../../../../components/Icon/Icon';
+import JSXElement from '../../../../utils/types/JSXElement';
+import { NavigationLinkProps } from '../../../../components/NavigationLink/NavigationLink';
 
 type HeaderNavLinkProps = NavigationLinkProps & {
 	icon?: IconProps;
@@ -24,8 +24,8 @@ const HeaderNavLink = ({
 	const navLinkWrapper = (navLink: JSXElement): JSXElement => isUndefined(icon) ?
 		navLink :
 		<div className={ styles['with-icon'] }>
-			<img src={icon.src} alt={icon.alt} width={ `${icon.size}px` } />
-			{navLink}
+			<img src={ icon.src } alt={ icon.alt } width={ `${ icon.size }px` } />
+			{ navLink }
 		</div>
 
 	return navLinkWrapper(

@@ -1,15 +1,15 @@
 @import '/src/utils/styles/variables/variables';
 
 .header-nav-link {
-	display: inline-block;
+	display:   inline-block;
 	min-width: max-content;
-	position: relative;
+	position:  relative;
 
 	&::after {
 		position: absolute;
-		left: 0;
-		content: attr(data-text);
-		width: max-content;
+		left:     0;
+		content:  attr(data-text);
+		width:    max-content;
 	}
 
 	&:hover {
@@ -34,10 +34,10 @@
 }
 
 .with-icon {
-	display: flex;
-	gap: 8px;
+	display:     flex;
+	gap:         8px;
 	align-items: center;
-	width: 100%;
+	width:       100%;
 
 	&:hover {
 		cursor: pointer;
@@ -54,7 +54,7 @@
 	}
 
 	img {
-		transform: scale(1);
+		transform:  scale(1);
 		transition: transform $animation-duration-normal;
 	}
 }

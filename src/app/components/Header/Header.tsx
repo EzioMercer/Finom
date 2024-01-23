@@ -1,7 +1,7 @@
 import styles from './Header.module.scss';
 import { Link } from 'react-router-dom';
 import HeaderNavLink from './HeaderNavLink/HeaderNavLink';
-import Button from '../general/Button/Button';
+import Button from '../../../components/Button/Button';
 import ChooseCompany from './ChooseCompany/ChooseCompany';
 import { useState } from 'react';
 
@@ -13,7 +13,7 @@ const Header = () => {
 
 			<div className={ styles.logo }>
 				<Link to={ '/' }>
-					<img src={`${ ASSETS_PATH }/images/icons/logo.png`} alt="logo" />
+					<img src={ `${ ASSETS_PATH }/images/icons/logo.png` } alt="logo" />
 				</Link>
 			</div>
 
@@ -21,7 +21,7 @@ const Header = () => {
 				<div className={ styles['burger-menu'] + ' ' + (isBurgerMenuOpen ? styles.open : '') }>
 					<div
 						className={ styles.lines }
-						onClick={() => setIsBurgerMenuOpen(!isBurgerMenuOpen)}
+						onClick={ () => setIsBurgerMenuOpen(!isBurgerMenuOpen) }
 					>
 						<div className={ styles.line }></div>
 						<div className={ styles.line }></div>
@@ -61,7 +61,7 @@ const Header = () => {
 							src: `${ ASSETS_PATH }/images/icons/general/rocket.png`,
 							alt: 'rocket',
 							size: 16
-						} } >
+						} }>
 							Upgrade plan
 						</Button>
 

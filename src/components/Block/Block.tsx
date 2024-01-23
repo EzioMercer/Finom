@@ -1,5 +1,5 @@
 import styles from './Block.module.scss';
-import JSXElement from '../../../utils/types/JSXElement';
+import JSXElement from '../../utils/types/JSXElement';
 
 const Block = ({
 	children,
