@@ -2,8 +2,11 @@ import styles from './PlanBlock.module.scss';
 import { Link } from 'react-router-dom';
 import Button from '../../../../../components/Button/Button';
 import Block from '../../../../../components/Block/Block';
+import { useState } from 'react';
 
 const PlanBlock = () => {
+	const [isFeaturesClosed, setIsFeaturesClosed] = useState(false);
+
 	return (
 		<Block className={ styles['plan-block'] }>
 			<div className={ styles['invoicing'] }>
@@ -36,7 +39,10 @@ const PlanBlock = () => {
 				</div>
 			</div>
 
-			<div className={ styles['features'] }>
+			<div className={ [
+				styles['features'],
+				isFeaturesClosed ? styles['close'] : ''
+			].join(' ') }>
 				<div className={ styles['head'] }>
 					<span>Explore new features</span>
 					<img src={ `${ ASSETS_PATH }/images/icons/general/dizzy.png` } alt="star" />
@@ -56,7 +62,11 @@ const PlanBlock = () => {
 					</div>
 
 					<div className={ styles['price-info'] }>
-						<img src={ `${ ASSETS_PATH }/images/icons/general/close.svg` } alt="close" />
+						<img
+							src={ `${ ASSETS_PATH }/images/icons/general/close.svg` }
+							alt="close"
+							onClick={ () => setIsFeaturesClosed(true) }
+						/>
 						<div className={ styles['price'] }>
 							€20.99 /mo
 						</div>
