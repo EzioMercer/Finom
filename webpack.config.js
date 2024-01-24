@@ -34,6 +34,9 @@ module.exports = (env, argv) => {
 			modules: ['src', 'node_modules'],
 			extensions: ['.js', '.jsx', '.ts', '.tsx'],
 		},
+		stats: {
+			loggingDebug: ['sass-loader'],
+		},
 		module: {
 			rules: [
 				{

@@ -122,6 +122,28 @@
 		}
 	}
 
+	@include media-2 {
+		.menu {
+			.burger-menu {
+
+				&.open {
+					.menu-items {
+						display: grid;
+						grid-template-columns: 32px 1fr 32px;
+
+						padding-right: 0;
+						padding-left: 0;
+
+						> * {
+							grid-column: 2;
+						}
+					}
+				}
+			}
+		}
+
+	}
+
 	@include media-1 {
 		.menu {
 			.burger-menu {
@@ -185,4 +207,6 @@
 			}
 		}
 	}
+
+
 }

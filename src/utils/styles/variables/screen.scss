@@ -1,14 +1,14 @@
-$breakpoint-1: 1200px;
-$breakpoint-2: 1070px;
+$breakpoint-1200: 1200px;
+$breakpoint-1070: 1070px;
 
 @mixin media-1 {
-	@media screen and (max-width: $breakpoint-1) {
+	@media screen and (max-width: $breakpoint-1200) {
 		@content
 	}
 }
 
 @mixin media-2 {
-	@media screen and (max-width: $breakpoint-2) {
+	@media screen and (max-width: $breakpoint-1070) {
 		@content
 	}
 }
