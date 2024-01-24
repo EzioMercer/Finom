@@ -1,11 +1,11 @@
 import styles from './Block.module.scss';
-import JSXElement from '../../utils/types/JSXElement';
+import Children from '../../utils/types/Children';
 
 const Block = ({
 	children,
 	className
 }: {
-	children: JSXElement | JSXElement[],
+	children: Children,
 	className?: string
 }) => {
 	return (

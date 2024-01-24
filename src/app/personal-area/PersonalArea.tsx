@@ -1,6 +1,7 @@
 import styles from './PersonalArea.module.scss';
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import Block from '../../components/Block/Block';
+import NavigationLink from '../../components/NavigationLink/NavigationLink';
 
 const PersonalArea = () => {
 	return (
@@ -11,15 +12,21 @@ const PersonalArea = () => {
 						Personal
 					</div>
 					<ul>
-						<li>
-							<NavLink to={ 'profile' }>Profile</NavLink>
-						</li>
-						<li>
-							<NavLink to={ 'security' }>Security</NavLink>
-						</li>
-						<li>
-							<NavLink to={ 'notifications' }>Notifications</NavLink>
-						</li>
+						<NavigationLink
+							activeClassName={ styles['active'] }
+							to={ 'profile' }
+							text={ 'Profile' }
+						/>
+						<NavigationLink
+							activeClassName={ styles['active'] }
+							to={ 'security' }
+							text={ 'Security' }
+						/>
+						<NavigationLink
+							activeClassName={ styles['active'] }
+							to={ 'notifications' }
+							text={ 'Notifications' }
+						/>
 					</ul>
 				</div>
 				<div className={ styles['list'] }>
@@ -27,18 +34,26 @@ const PersonalArea = () => {
 						Tesla S.R.L.
 					</div>
 					<ul>
-						<li>
-							<NavLink to={ 'business-profile' }>Business profile</NavLink>
-						</li>
-						<li>
-							<NavLink to={ 'e-invoicing' }>E-invoicing</NavLink>
-						</li>
-						<li>
-							<NavLink to={ 'plan-and-limits' }>Plan and limits</NavLink>
-						</li>
-						<li>
-							<NavLink to={ 'team' }>Team</NavLink>
-						</li>
+						<NavigationLink
+							activeClassName={ styles['active'] }
+							to={ 'business-profile' }
+							text={ 'Business profile' }
+						/>
+						<NavigationLink
+							activeClassName={ styles['active'] }
+							to={ 'e-invoicing' }
+							text={ 'E-invoicing' }
+						/>
+						<NavigationLink
+							activeClassName={ styles['active'] }
+							to={ 'plan-and-limits' }
+							text={ 'Plan and limits' }
+						/>
+						<NavigationLink
+							activeClassName={ styles['active'] }
+							to={ 'team' }
+							text={ 'Team' }
+						/>
 					</ul>
 				</div>
 			</Block>

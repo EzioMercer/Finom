@@ -1,5 +1,5 @@
-import JSXElement from './JSXElement';
+import { ReactNode } from 'react';
 
-type Children = JSXElement | string;
+type Children = ReactNode | ReactNode[];
 
 export default Children;

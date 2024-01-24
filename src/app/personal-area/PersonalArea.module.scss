@@ -30,7 +30,34 @@
 				font-size:   16px;
 
 				li {
-					padding: 12px 32px;
+					&.active {
+						$border-width: 4px;
+
+						a {
+							--horizontal-padding: calc(32px - #{$border-width});
+						}
+
+						border-left: $border-width solid $brand-colorPrimary;
+					}
+
+					background-color: $font-colorTextContrast;
+					transition:       background-color $animation-duration-slow;
+
+					&:hover {
+						cursor: pointer;
+						background-color: #f2f2f4;
+					}
+
+					a {
+						--horizontal-padding: 32px;
+
+						width: 100%;
+						padding: 12px var(--horizontal-padding);
+
+						&::after {
+							left: var(--horizontal-padding);
+						}
+					}
 				}
 			}
 		}
