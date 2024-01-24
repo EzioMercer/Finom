@@ -52,11 +52,13 @@
 		width: 250%;
 		overflow: hidden;
 
+		$gap-between-tabs: 100px;
+
 		.limits {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			gap: 40px;
-			margin-right: 75px;
+			margin-right: $gap-between-tabs;
 
 			transform: translateX(calc(-100% - 60px));
 			transition: transform $animation-duration-slow;
@@ -166,7 +168,7 @@
 			transition: transform $animation-duration-slow;
 
 			&.active {
-				transform: translateX(calc(-100% - 75px));
+				transform: translateX(calc(-100% - $gap-between-tabs));
 
 				.progress-bar {
 					.front-line {
