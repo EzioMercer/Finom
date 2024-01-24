@@ -7,6 +7,8 @@
 
 	padding:        40px 60px;
 
+	overflow: hidden;
+
 	.tabs {
 		ul {
 			display: flex;
@@ -46,101 +48,221 @@
 	}
 
 	.body {
-		display: none;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 40px;
+		display: flex;
+		width: 250%;
+		overflow: hidden;
 
-		.limit {
-			display: flex;
-			flex-direction: column;
-			gap: 8px;
+		.limits {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 40px;
+			margin-right: 75px;
 
-			font-family: Lato-Regular, sans-serif;
+			transform: translateX(calc(-100% - 60px));
+			transition: transform $animation-duration-slow;
 
-			.head {
-				display: flex;
-				justify-content: space-between;
+			&.active {
+				transform: translateX(0);
 
-				.name {
-					font-size: 16px;
-					color: $font-colorText;
-				}
-
-				.available {
-					font-size: 14px;
-					color: $font-colorText;
-					letter-spacing: 1px;
-
-					.total {
-						color: $font-colorTextLight;
+				.progress-bar {
+					.front-line {
+						animation: fill $animation-duration-super-slow forwards;
 					}
 				}
 			}
 
-			.progress-bar {
-				position: relative;
-				height: 8px;
+			.limit {
+				display: flex;
+				flex-direction: column;
+				gap: 8px;
 
-				.back-line,
-				.front-line {
-					position: absolute;
+				font-family: Lato-Regular, sans-serif;
 
-					height: 100%;
-					border-radius: 4px;
+				.head {
+					display: flex;
+					justify-content: space-between;
+
+					.name {
+						font-size: 16px;
+						color: $font-colorText;
+					}
+
+					.available {
+						font-size: 14px;
+						color: $font-colorText;
+						letter-spacing: 1px;
+
+						.total {
+							color: $font-colorTextLight;
+						}
+					}
 				}
 
-				.back-line {
-					width: 100%;
+				.progress-bar {
+					position: relative;
+					height: 8px;
 
-					background-color: $palette-black-5;
+					.back-line,
+					.front-line {
+						position: absolute;
+
+						height: 100%;
+						border-radius: 4px;
+					}
+
+					.back-line {
+						width: 100%;
+
+						background-color: $palette-black-5;
+					}
 				}
 
-				.front-line {
-					animation: fill $animation-duration-super-slow forwards;
-				}
-			}
+				.info {
+					font-size: 14px;
+					color: $font-colorTextLight;
 
-			.info {
-				font-size: 14px;
-				color: $font-colorTextLight;
-
-				a {
-					text-decoration: underline;
-					color: inherit;
-				}
-			}
-
-			&:nth-child(1) {
-				.front-line {
-					--fill: 50%;
-
-					background-color: $font-colorTextAction;
-				}
-			}
-
-			&:nth-child(2) {
-				.available {
-					letter-spacing: 0;
+					a {
+						text-decoration: underline;
+						color: inherit;
+					}
 				}
 
-				.front-line {
-					--fill: 100%;
+				&:nth-child(1) {
+					.front-line {
+						--fill: 50%;
 
-					background-color: $font-colorTextAction;
+						background-color: $font-colorTextAction;
+					}
 				}
-			}
 
-			&:nth-child(3) {
-				.front-line {
-					--fill: 100%;
+				&:nth-child(2) {
+					.available {
+						letter-spacing: 0;
+					}
 
-					background-color: $font-colorTextAccent;
+					.front-line {
+						--fill: 100%;
+
+						background-color: $font-colorTextAction;
+					}
+				}
+
+				&:nth-child(3) {
+					.front-line {
+						--fill: 100%;
+
+						background-color: $font-colorTextAccent;
+					}
 				}
 			}
 		}
 
-		&.active {
+		.invoices {
 			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 40px;
+
+			transform: translateX(0);
+			transition: transform $animation-duration-slow;
+
+			&.active {
+				transform: translateX(calc(-100% - 75px));
+
+				.progress-bar {
+					.front-line {
+						animation: fill $animation-duration-super-slow forwards;
+					}
+				}
+			}
+
+			.limit {
+				display: flex;
+				flex-direction: column;
+				gap: 8px;
+
+				font-family: Lato-Regular, sans-serif;
+
+				.head {
+					display: flex;
+					justify-content: space-between;
+
+					.name {
+						font-size: 16px;
+						color: $font-colorText;
+					}
+
+					.available {
+						font-size: 14px;
+						color: $font-colorText;
+						letter-spacing: 1px;
+
+						.total {
+							color: $font-colorTextLight;
+						}
+					}
+				}
+
+				.progress-bar {
+					position: relative;
+					height: 8px;
+
+					.back-line,
+					.front-line {
+						position: absolute;
+
+						height: 100%;
+						border-radius: 4px;
+					}
+
+					.back-line {
+						width: 100%;
+
+						background-color: $palette-black-5;
+					}
+				}
+
+				.info {
+					font-size: 14px;
+					color: $font-colorTextLight;
+
+					a {
+						text-decoration: underline;
+						color: inherit;
+					}
+				}
+
+				&:nth-child(1) {
+					.available {
+						letter-spacing: 0;
+					}
+
+					.front-line {
+						--fill: 100%;
+
+						background-color: $font-colorTextAction;
+					}
+				}
+
+				&:nth-child(2) {
+					.available {
+						letter-spacing: 0;
+					}
+
+					.front-line {
+						--fill: 100%;
+
+						background-color: $font-colorTextAccent;
+					}
+				}
+
+				&:nth-child(3) {
+					.front-line {
+						--fill: 50%;
+
+						background-color: $font-colorTextAction;
+					}
+				}
+			}
 		}
 	}
 }

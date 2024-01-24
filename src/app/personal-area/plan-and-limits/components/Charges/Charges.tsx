@@ -24,113 +24,116 @@ const Charges = () => {
 				</ul>
 			</div>
 
-			<div className={ [
-				styles['body'],
-				activeTabIndex === 0 ? styles['active'] : ''
-			].join(' ') }>
-				<div className={ styles['limit'] }>
-					<div className={ styles['head'] }>
-						<div className={ styles['name'] }>Team members</div>
-						<div className={ styles['available'] }>
-							3 <span className={ styles['total'] }> / 6</span>
+			<div className={ styles['body'] }>
+				<div className={ [
+					styles['limits'],
+					activeTabIndex === 0 ? styles['active'] : ''
+				].join(' ') }>
+					<div className={ styles['limit'] }>
+						<div className={ styles['head'] }>
+							<div className={ styles['name'] }>Team members</div>
+							<div className={ styles['available'] }>
+								3 <span className={ styles['total'] }> / 6</span>
+							</div>
+						</div>
+						<div className={ styles['progress-bar'] }>
+							<div className={ styles['back-line'] }></div>
+							<div className={ styles['front-line'] }></div>
+						</div>
+						<div className={ styles['info'] }>
+							Need more members? <Link to={ '#' }>Upgrade your plan</Link>
 						</div>
 					</div>
-					<div className={ styles['progress-bar'] }>
-						<div className={ styles['back-line'] }></div>
-						<div className={ styles['front-line'] }></div>
+
+					<div className={ styles['limit'] }>
+						<div className={ styles['head'] }>
+							<div className={ styles['name'] }>Outgoing e-invoices</div>
+							<div className={ styles['available'] }>
+								<span className={ styles['total'] }>Unlimited</span>
+							</div>
+						</div>
+						<div className={ styles['progress-bar'] }>
+							<div className={ styles['back-line'] }></div>
+							<div className={ styles['front-line'] }></div>
+						</div>
+						<div className={ styles['info'] }>
+							Send as many e-invoices as you want
+						</div>
 					</div>
-					<div className={ styles['info'] }>
-						Need more members? <Link to={ '#' }>Upgrade your plan</Link>
+
+					<div className={ styles['limit'] }>
+						<div className={ styles['head'] }>
+							<div className={ styles['name'] }>Connected sources (banks)</div>
+							<div className={ styles['available'] }>
+								5 <span className={ styles['total'] }> / 5</span>
+							</div>
+						</div>
+						<div className={ styles['progress-bar'] }>
+							<div className={ styles['back-line'] }></div>
+							<div className={ styles['front-line'] }></div>
+						</div>
+						<div className={ styles['info'] }>
+							Need more banks to connect? <Link to={ '#' }>Upgrade your plan</Link>
+						</div>
 					</div>
 				</div>
 
-				<div className={ styles['limit'] }>
-					<div className={ styles['head'] }>
-						<div className={ styles['name'] }>Outgoing e-invoices</div>
-						<div className={ styles['available'] }>
-							<span className={ styles['total'] }>Unlimited</span>
+				<div className={ [
+					styles['invoices'],
+					activeTabIndex === 1 ? styles['active'] : ''
+				].join(' ') }>
+					<div className={ styles['limit'] }>
+						<div className={ styles['head'] }>
+							<div className={ styles['name'] }>Outgoing e-invoices</div>
+							<div className={ styles['available'] }>
+								<span className={ styles['total'] }>Unlimited</span>
+							</div>
+						</div>
+						<div className={ styles['progress-bar'] }>
+							<div className={ styles['back-line'] }></div>
+							<div className={ styles['front-line'] }></div>
+						</div>
+						<div className={ styles['info'] }>
+							Send as many e-invoices as you want
 						</div>
 					</div>
-					<div className={ styles['progress-bar'] }>
-						<div className={ styles['back-line'] }></div>
-						<div className={ styles['front-line'] }></div>
-					</div>
-					<div className={ styles['info'] }>
-						Send as many e-invoices as you want
-					</div>
-				</div>
 
-				<div className={ styles['limit'] }>
-					<div className={ styles['head'] }>
-						<div className={ styles['name'] }>Connected sources (banks)</div>
-						<div className={ styles['available'] }>
-							5 <span className={ styles['total'] }> / 5</span>
+					<div className={ styles['limit'] }>
+						<div className={ styles['head'] }>
+							<div className={ styles['name'] }>Connected sources (banks)</div>
+							<div className={ styles['available'] }>
+								5 <span className={ styles['total'] }> / 5</span>
+							</div>
+						</div>
+						<div className={ styles['progress-bar'] }>
+							<div className={ styles['back-line'] }></div>
+							<div className={ styles['front-line'] }></div>
+						</div>
+						<div className={ styles['info'] }>
+							Need more banks to connect? <Link to={ '#' }>Upgrade your plan</Link>
 						</div>
 					</div>
-					<div className={ styles['progress-bar'] }>
-						<div className={ styles['back-line'] }></div>
-						<div className={ styles['front-line'] }></div>
+
+					<div className={ styles['limit'] }>
+						<div className={ styles['head'] }>
+							<div className={ styles['name'] }>Team members</div>
+							<div className={ styles['available'] }>
+								3 <span className={ styles['total'] }> / 6</span>
+							</div>
+						</div>
+						<div className={ styles['progress-bar'] }>
+							<div className={ styles['back-line'] }></div>
+							<div className={ styles['front-line'] }></div>
+						</div>
+						<div className={ styles['info'] }>
+							Need more members? <Link to={ '#' }>Upgrade your plan</Link>
+						</div>
 					</div>
-					<div className={ styles['info'] }>
-						Need more banks to connect? <Link to={ '#' }>Upgrade your plan</Link>
-					</div>
-				</div>
 			</div>
+		</div>
 
-			<div className={ [
-				styles['body'],
-				activeTabIndex === 1 ? styles['active'] : ''
-			].join(' ') }>
-				<div className={ styles['limit'] }>
-					<div className={ styles['head'] }>
-						<div className={ styles['name'] }>Outgoing e-invoices</div>
-						<div className={ styles['available'] }>
-							<span className={ styles['total'] }>Unlimited</span>
-						</div>
-					</div>
-					<div className={ styles['progress-bar'] }>
-						<div className={ styles['back-line'] }></div>
-						<div className={ styles['front-line'] }></div>
-					</div>
-					<div className={ styles['info'] }>
-						Send as many e-invoices as you want
-					</div>
-				</div>
-
-				<div className={ styles['limit'] }>
-					<div className={ styles['head'] }>
-						<div className={ styles['name'] }>Connected sources (banks)</div>
-						<div className={ styles['available'] }>
-							5 <span className={ styles['total'] }> / 5</span>
-						</div>
-					</div>
-					<div className={ styles['progress-bar'] }>
-						<div className={ styles['back-line'] }></div>
-						<div className={ styles['front-line'] }></div>
-					</div>
-					<div className={ styles['info'] }>
-						Need more banks to connect? <Link to={ '#' }>Upgrade your plan</Link>
-					</div>
-				</div>
-
-				<div className={ styles['limit'] }>
-					<div className={ styles['head'] }>
-						<div className={ styles['name'] }>Team members</div>
-						<div className={ styles['available'] }>
-							3 <span className={ styles['total'] }> / 6</span>
-						</div>
-					</div>
-					<div className={ styles['progress-bar'] }>
-						<div className={ styles['back-line'] }></div>
-						<div className={ styles['front-line'] }></div>
-					</div>
-					<div className={ styles['info'] }>
-						Need more members? <Link to={ '#' }>Upgrade your plan</Link>
-					</div>
-				</div>
-			</div>
-		</Block>
-	)
+	</Block>
+)
 }
 
 export default Charges;
