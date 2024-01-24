@@ -111,7 +111,7 @@
 		border-radius: 8px;
 		padding:       8px 0;
 
-		@include media {
+		@include media-1 {
 			width: 100%;
 		}
 	}

@@ -154,6 +154,12 @@
 				flex-direction: column;
 				align-items:    flex-end;
 
+				img {
+					&:hover {
+						cursor: pointer;
+					}
+				}
+
 				.price {
 					margin-top:  12px;
 

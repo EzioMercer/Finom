@@ -1,9 +1,151 @@
 @import '/src/utils/styles/variables/variables';
 
 .charges {
-	padding: 40px 60px;
+	display:        flex;
+	flex-direction: column;
+	gap:            52px;
+
+	padding:        40px 60px;
 
 	.tabs {
+		ul {
+			display: flex;
+			gap:     44px;
 
+			li {
+				font-family: Lato-Regular, sans-serif;
+				font-size: 18px;
+				color: $font-colorTextLight;
+
+				&:hover {
+					cursor: pointer;
+				}
+
+				&.active {
+					position: relative;
+
+					font-family: Lato-Bold, sans-serif;
+					color: $font-colorText;
+
+					&::after {
+						content: '';
+
+						position: absolute;
+						left: 0;
+						top: calc(100% + 12px);
+
+						width: 100%;
+						height: 4px;
+
+						border-radius: 4px;
+						background-color: $font-colorTextAccent;
+					}
+				}
+			}
+		}
+	}
+
+	.body {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 40px;
+
+		.limit {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+
+			font-family: Lato-Regular, sans-serif;
+
+			.head {
+				display: flex;
+				justify-content: space-between;
+
+				.name {
+					font-size: 16px;
+					color: $font-colorText;
+				}
+
+				.available {
+					font-size: 14px;
+					color: $font-colorText;
+					letter-spacing: 1px;
+
+					.total {
+						color: $font-colorTextLight;
+					}
+				}
+			}
+
+			.progress-bar {
+				position: relative;
+				height: 8px;
+
+				.back-line,
+				.front-line {
+					position: absolute;
+
+					height: 100%;
+					border-radius: 4px;
+				}
+
+				.back-line {
+					width: 100%;
+
+					background-color: $palette-black-5;
+				}
+
+				.front-line {
+					animation: fill $animation-duration-super-slow forwards;
+				}
+			}
+
+			.info {
+				font-size: 14px;
+				color: $font-colorTextLight;
+
+				a {
+					text-decoration: underline;
+					color: inherit;
+				}
+			}
+		}
+
+		.limit:nth-child(1) {
+			.front-line {
+				--fill: 50%;
+
+				background-color: $font-colorTextAction;
+			}
+		}
+
+		.limit:nth-child(2) {
+			.available {
+				letter-spacing: 0;
+			}
+
+			.front-line {
+				--fill: 100%;
+
+				background-color: $font-colorTextAction;
+			}
+		}
+
+		.limit:nth-child(3) {
+			.front-line {
+				--fill: 100%;
+
+				background-color: $font-colorTextAccent;
+			}
+		}
+	}
+}
+
+@keyframes fill {
+	from {
+		width: 0;
+	}
+	to {
+		width: var(--fill);
 	}
 }

@@ -11,7 +11,7 @@
 		grid-column: 2;
 	}
 
-	@include media {
+	@include media-1 {
 		grid-template-columns: 32px 1fr 32px;
 
 		> * {

@@ -1,14 +1,26 @@
 import styles from './Charges.module.scss';
 import { Link } from 'react-router-dom';
 import Block from '../../../../../components/Block/Block';
+import { useState } from 'react';
 
 const Charges = () => {
+	const [activeTabIndex, setActiveTabIndex] = useState(0);
+
+	const tabs = ['Limits', 'Invoices'];
+
 	return (
 		<Block className={ styles['charges'] }>
 			<div className={ styles['tabs'] }>
 				<ul>
-					<li>Limits</li>
-					<li>Invoices</li>
+					{
+						tabs.map((tab, i) => <li
+							key={i}
+							className={activeTabIndex === i ? styles['active'] : ''}
+							onClick={() => setActiveTabIndex(i)}
+						>
+							{tab}
+						</li>)
+					}
 				</ul>
 			</div>
 			<div className={ styles['body'] }>
