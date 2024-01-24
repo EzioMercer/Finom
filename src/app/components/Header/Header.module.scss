@@ -122,28 +122,6 @@
 		}
 	}
 
-	@include media-2 {
-		.menu {
-			.burger-menu {
-
-				&.open {
-					.menu-items {
-						display: grid;
-						grid-template-columns: 32px 1fr 32px;
-
-						padding-right: 0;
-						padding-left: 0;
-
-						> * {
-							grid-column: 2;
-						}
-					}
-				}
-			}
-		}
-
-	}
-
 	@include media-1 {
 		.menu {
 			.burger-menu {
@@ -154,7 +132,7 @@
 
 				&.open {
 					.menu-items {
-						padding:    32px 16px 16px;
+						padding:    32px 0 16px;
 						max-height: 100vh;
 
 						animation:  delay-overflow $animation-duration-fast forwards;
@@ -166,14 +144,14 @@
 				}
 
 				.menu-items {
-					display:             flex;
-					flex-direction:      column;
+					display: grid;
+					grid-template-columns: 16px 1fr 16px;
 
 					width:               100vw;
 					max-height:          0;
 					overflow:            hidden;
 
-					transition-property: max-height, padding;
+					transition-property: max-height, grid-template-columns, padding;
 					transition-duration: $animation-duration-fast;
 
 
@@ -182,6 +160,14 @@
 					right:               calc($header-horizontal-padding * -1);
 
 					background-color:    white;
+
+					> :nth-last-child(2) {
+						margin-left: unset;
+					}
+
+					> * {
+						grid-column: 2;
+					}
 
 					nav {
 						ul {
@@ -199,14 +185,39 @@
 							}
 						}
 					}
-
-					> :nth-last-child(2) {
-						margin-left: unset;
-					}
 				}
 			}
 		}
 	}
 
+	@include media-2 {
+		.menu {
+			.burger-menu {
 
+				&.open {
+					.menu-items {
+						display: grid;
+						grid-template-columns: 32px 1fr 32px;
+
+						transition-duration: $animation-duration-fast;
+
+						padding-right: 0;
+						padding-left: 0;
+
+						> * {
+							grid-column: 2;
+						}
+					}
+				}
+
+				.menu-items {
+					grid-template-columns: 0 1fr 0;
+
+					transition-property: max-height, grid-template-columns, padding;
+					transition-duration: $animation-duration-fast;
+				}
+			}
+		}
+
+	}
 }
