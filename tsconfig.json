@@ -29,8 +29,8 @@
 
     // Language and env
     "target": "es2022",
-    "jsx": "react",
-    
+    "jsx": "react-jsx",
+
     // JS
     "allowJs": true,
     "checkJs": true,

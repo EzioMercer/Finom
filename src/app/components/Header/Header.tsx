@@ -12,9 +12,9 @@ const Header = () => {
 		<header className={ styles.header }>
 
 			<div className={ styles.logo }>
-				<NavigationLink to={ '' }>
+				<Link to={ `${ PROJECT_NAME }/` }>
 					<img src={ `${ ASSETS_PATH }/images/icons/logo.png` } alt="logo" />
-				</NavigationLink>
+				</Link>
 			</div>
 
 			<div className={ styles.menu }>
